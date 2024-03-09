@@ -242,9 +242,12 @@ html {
       }
       
       
-      function toggleDone(event) {
+         function toggleDone(event) {
         if (!event.target.classList.contains('bkdel')) {
           const bucketDiv = event.currentTarget;
+      if (!bucketDiv.classList.contains('done')) {
+        alert("달성을 축하합니다!");
+      }
           const isDone = bucketDiv.classList.toggle('done');
           const index = Array.from(bucketListDiv.children).indexOf(bucketDiv);
           localStorage.setItem("bucket" + index, isDone ? 'done' : '');
